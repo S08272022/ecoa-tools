@@ -182,18 +182,15 @@ curl -X POST http://localhost:5000/api/tools/execute-project \
   -H "Content-Type: application/json" \
   -d '{"project_name": "marx_brothers", "project_file": "marx_brothers.project.xml", "tool": "mscigt"}'
 
+  #csmgvt
+  curl -X POST http://localhost:5000/api/tools/execute-project \
+  -H "Content-Type: application/json" \
+  -d '{"project_name": "marx_brothers", "project_file": "marx_brothers.project.xml", "tool": "csmgvt"}'
+
 # Generate LDP platform with default compilation (log4cplus)
 curl -X POST http://localhost:5000/api/tools/execute-project \
   -H "Content-Type: application/json" \
   -d '{"project_name": "marx_brothers", "project_file": "marx_brothers.project.xml", "tool": "ldp"}'
 
-# Generate LDP platform with compilation disabled
-curl -X POST http://localhost:5000/api/tools/execute-project \
-  -H "Content-Type: application/json" \
-  -d '{"project_name": "marx_brothers", "project_file": "marx_brothers.project.xml", "tool": "ldp", "compile": false}'
 
-# Generate LDP platform with compilation using zlog library (override default)
-curl -X POST http://localhost:5000/api/tools/execute-project \
-  -H "Content-Type: application/json" \
-  -d '{"project_name": "marx_brothers", "project_file": "marx_brothers.project.xml", "tool": "ldp", "log_library": "zlog", "cmake_options": ["-DLDP_LOG_USE=zlog", "-DCMAKE_BUILD_TYPE=Release"]}'
 ```
